@@ -1,0 +1,13 @@
+<svg width="560" height="160" viewBox="0 0 560 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="160" rx="18" fill="#FFFFFF"/>
+  <rect x="2" y="2" width="556" height="156" rx="16" stroke="#E6D5C2" stroke-width="2"/>
+  <circle cx="84" cy="80" r="50" fill="#FBF6EF" stroke="#6F3B59" stroke-width="3"/>
+  <path d="M56 92C64 73 81 60 101 64C113 66 122 75 126 88" stroke="#B98324" stroke-width="5" stroke-linecap="round"/>
+  <path d="M44 102C57 104 65 98 74 95C87 91 95 93 104 96C112 99 122 102 136 99" stroke="#4B7D3F" stroke-width="4" stroke-linecap="round"/>
+  <path d="M84 58V94" stroke="#B98324" stroke-width="5" stroke-linecap="round"/>
+  <path d="M84 70C74 67 66 72 62 80" stroke="#B98324" stroke-width="4" stroke-linecap="round"/>
+  <path d="M84 70C92 67 103 70 108 79" stroke="#B98324" stroke-width="4" stroke-linecap="round"/>
+  <text x="160" y="68" fill="#6F3B59" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">Dhofar Insurance</text>
+  <text x="160" y="102" fill="#6A5B62" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="600">Company S.A.O.G</text>
+  <text x="160" y="130" fill="#907D67" font-family="Manrope, Arial, sans-serif" font-size="15">Internal Knowledge Assistant</text>
+</svg>

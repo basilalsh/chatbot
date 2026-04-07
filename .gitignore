@@ -1,0 +1,39 @@
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ── Virtual environment ───────────────────────────────────────
+.venv/
+
+# ── Secrets ───────────────────────────────────────────────────
+# .env is intentionally excluded — user creates this from .env.example
+.env
+
+# ── User PDF documents ────────────────────────────────────────
+# User adds their own PDFs to uploads/ after cloning.
+# The uploads/ folder itself IS tracked (via .gitkeep).
+uploads/*.pdf
+
+# ── Runtime / log files ───────────────────────────────────────
+server.pid
+server_out.txt
+server_err.txt
+build_log.txt
+
+# ── PyInstaller build artifacts ───────────────────────────────
+dist/
+*.spec
+
+# ── Windows metadata ──────────────────────────────────────────
+desktop.ini
+Thumbs.db
+
+# ── Node.js ───────────────────────────────────────────────────
+frontend/node_modules/
+# frontend/dist is NOT ignored — Vite outputs there during dev,
+# but the production build goes to static/dist/ which IS tracked.
+
+# ── Notes ─────────────────────────────────────────────────────
+# data/embeddings_cache.json is tracked via Git LFS (see .gitattributes).
+# static/dist/ is intentionally tracked (pre-built frontend, no Node.js needed).

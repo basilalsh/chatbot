@@ -1,0 +1,4 @@
+pyinstaller>=6.10.0
+pywebview>=5.1
+bottle>=0.13
+proxy_tools>=0.1.0
