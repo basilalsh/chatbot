@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *.pyo
+*.bak
 
 # ── Virtual environment ───────────────────────────────────────
 .venv/
@@ -22,7 +23,8 @@ server_err.txt
 build_log.txt
 
 # ── PyInstaller build artifacts ───────────────────────────────
-dist/
+# /dist/ is the PyInstaller output at the project root; static/dist/ is tracked.
+/dist/
 *.spec
 
 # ── Windows metadata ──────────────────────────────────────────
