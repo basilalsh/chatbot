@@ -5,7 +5,6 @@ import logging
 import os
 import re
 import shutil
-import signal
 import threading
 import time
 from pathlib import Path
@@ -267,11 +266,12 @@ def create_app() -> Flask:
     def shutdown():
         """Gracefully stop the server process. Triggered by the UI shutdown button."""
         log.info("Shutdown requested via web UI.")
-        # Send SIGTERM to self after a brief delay so the HTTP response
-        # can be delivered to the browser before the process exits.
+        # os._exit(0) terminates the whole process with exit code 0.
+        # Called in a daemon thread after a short delay so the HTTP response
+        # is delivered to the browser first.
         def _kill():
             time.sleep(0.6)
-            os.kill(os.getpid(), signal.SIGTERM)
+            os._exit(0)
         threading.Thread(target=_kill, daemon=True).start()
         return jsonify({"message": "Server shutting down."})
 

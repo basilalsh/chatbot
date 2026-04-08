@@ -277,5 +277,5 @@ if %errorlevel% neq 0 (
     pause
     exit /b 1
 )
-
-pause
+:: Exit code 0 = clean shutdown (e.g. via the web UI shutdown button).
+:: Close the window silently without pausing.
