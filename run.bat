@@ -261,7 +261,8 @@ echo ============================================
 echo   Application running at:
 echo   http://127.0.0.1:5000
 echo.
-echo   Press Ctrl+C to stop the server.
+echo   Stop: use the Shutdown button in the UI,
+echo         or press Ctrl+C in this window.
 echo ============================================
 echo.
 
@@ -269,13 +270,18 @@ echo.
 start "" cmd /c "timeout /t 2 /nobreak >nul & start http://127.0.0.1:5000"
 
 "%VENV_PYTHON%" app.py
-if %errorlevel% neq 0 (
-    color 0C
-    echo.
-    echo ERROR: Application exited with an error.
-    echo.
-    pause
-    exit /b 1
-)
-:: Exit code 0 = clean shutdown (e.g. via the web UI shutdown button).
-:: Close the window silently without pausing.
+set APP_EXIT=%errorlevel%
+
+:: Exit code 0  = clean shutdown via the web UI shutdown button → close silently.
+:: Exit code 1  = Ctrl+C in the terminal window   → also close silently (expected).
+:: Anything else = genuine crash → show error and pause.
+if %APP_EXIT% equ 0 exit /b 0
+if %APP_EXIT% equ 1 exit /b 0
+
+color 0C
+echo.
+echo ERROR: Application exited unexpectedly (code %APP_EXIT%).
+echo        Check the output above for details.
+echo.
+pause
+exit /b %APP_EXIT%
